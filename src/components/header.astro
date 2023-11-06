@@ -1,12 +1,12 @@
 ---
-import { Icon } from "astro-icon";
+import Icon from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
 const navItems: Array<NavItem> = [
-  { title: "Features", url: "#features" },
-  { title: "Compatibility", url: "#compatibility" },
-  { title: "Showcase", url: "#showcase" },
+  { title: "The Community", url: "#features" },
+  { title: "Upcoming Events", url: "#compatibility" },
+  { title: "Organizers", url: "#showcase" },
 ];
 ---
 
@@ -16,8 +16,7 @@ const navItems: Array<NavItem> = [
 >
   <a class="flex items-center gap-3 hover:!text-default" href="#">
     <h1 class="sr-only">Astro</h1>
-    <Icon name="logomark" class="h-10" />
-    <Icon name="wordmark" class="hidden h-4 sm:block" />
+    <h1 class="font-bold">&lt;frontend.OPO/&gt;</h1>
   </a>
   <div>
     <div class="flex items-center gap-6">
@@ -58,7 +57,7 @@ const navItems: Array<NavItem> = [
             </button>
           </header>
           <div class="flex justify-center">
-            <Icon name="logomark" class="h-16" />
+            <h1 class="font-extrabold text-2xl">&lt;FE.OPO/&gt;</h1>
           </div>
           <nav>
             <ul class="flex flex-col">

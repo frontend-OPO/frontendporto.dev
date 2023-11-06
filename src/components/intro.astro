@@ -1,10 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import { Icon } from "astro-icon";
+
+import womanCoder from "~/assets/coder-woman.svg";
 import ContentSection from "~/components/content-section.astro";
+
+const widths = [250, 400];
+const sizes = "(min-width: 640px) 30vw, 45vw";
 ---
 
 <ContentSection title="Just ship less" id="intro">
-  <Icon slot="eyebrow" name="logomark" class="h-32" />
+  <Image
+    class="h-64 w-64"
+    src={womanCoder}
+    loading="eager"
+    alt="A Woman frontend developer working on a laptop"
+  />
   <Fragment slot="lead">
     Astro is a new kind of site builder for the
     <span class="text-primary">modern</span> web.

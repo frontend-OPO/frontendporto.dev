@@ -4,10 +4,10 @@ export interface CompatibilityItem {
   url: string;
 }
 
-export interface FeatureItem {
+export interface PastEventsItem {
   description: string;
-  icon: string;
   title: string;
+  link: string;
 }
 
 export interface FooterLink {

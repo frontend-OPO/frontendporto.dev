@@ -1,31 +1,95 @@
 ---
-import { getCollection } from "astro:content";
+import { Icon } from "astro-icon";
+import { Image } from "astro:assets";
 import ContentSection from "~/components/content-section.astro";
-import ShowcaseCard from "~/components/showcase-card.astro";
 
-const featuredSites = await getCollection(
-  "showcase",
-  ({ data }) => "featured" in data,
-);
-const orderedSites = featuredSites.sort(
-  (a, b) => a.data.featured! - b.data.featured!,
-);
+const organizers = [
+  {
+    name: "Luis von Rondow",
+    role: "Frontend Engineer at Sword Health",
+    bio: "Lo-Fi, JavaScript and Ryanair, the holy trinity of my life. Always up for a beer and a good tech talk.",
+    twitter: "https://twitter.com/rond0w",
+    github: "https://github.com/luisrondow",
+    linkedin: "https://www.linkedin.com/in/luisrondow/",
+    avatar:
+      "https://media.licdn.com/dms/image/D4D03AQHfTOnMe-WKeA/profile-displayphoto-shrink_800_800/0/1681238532139?e=1704931200&v=beta&t=CtuA7JCfLF3AYFEtyrE2V1iUx20MMYA3A4Ji5eSNPlo",
+  },
+  {
+    name: "Fabio Zuin",
+    role: "Senior Frontend Engineer at Devexperts",
+    bio: "Lorem Impsum Dolor Sit Amet Consectetur Adipiscing Elit. Donec Eget Diam Sit Amet Nunc.",
+    twitter: "https://twitter.com/elonmusk",
+    github: "https://github.com/fbzz",
+    linkedin: "https://www.linkedin.com/in/fabio-zuin-85116089/",
+    avatar:
+      "https://media.licdn.com/dms/image/D4D03AQE8mOwfiVHN2g/profile-displayphoto-shrink_800_800/0/1685463781432?e=2147483647&v=beta&t=dLmsOUh1H1jKWA5jtDn7_HSBe7i7mfq_eKvkXao6qDU",
+  },
+  {
+    name: "João Mateus",
+    role: "Frontend Engineer at Devoteam",
+    bio: "Lorem Impsum Dolor Sit Amet Consectetur Adipiscing Elit. Donec Eget Diam Sit Amet Nunc.",
+    twitter: "https://twitter.com/elonmusk",
+    github: "https://github.com/elonmusk",
+    linkedin:
+      "https://www.linkedin.com/in/jo%C3%A3o-lu%C3%ADs-mateus-384568101/",
+    avatar:
+      "https://media.licdn.com/dms/image/D4D03AQHX79QcDFjmVw/profile-displayphoto-shrink_800_800/0/1681995648902?e=1704931200&v=beta&t=XkelxcgkCIbwLymm6j5eiADUhiiClmYDzUQBeW2ClBc",
+  },
+];
 ---
 
-<ContentSection title="Showcase" id="showcase">
+<ContentSection title="Who we are" id="the-organizers">
   <Fragment slot="lead">
-    Astro is <span class="text-primary">versatile</span>.{" "}
-    <span class="text-primary">Explore</span> what's possible and get{" "}
-    <span class="text-primary">inspired</span>.
+    The faces behind the meetup. We are a group of developers who are passionate
+    about the web, the community and francesinhas.
   </Fragment>
   <div class="max-w-6xl space-y-2">
-    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {orderedSites.map((site) => <ShowcaseCard site={site} />)}
-    </div>
-    <p class="text-right text-sm">
-      <a class="text-primary" href="https://astro.build/showcase/">
-        ...and more &rarr;
-      </a>
-    </p>
+    <ul class="grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        organizers.map((organizer) => (
+          <li class="relative mt-14 flex flex-col items-center gap-4 rounded-2xl border-2 border-default bg-offset p-6 pt-16">
+            <Image
+              width={120}
+              height={120}
+              class="absolute -top-16 rounded-full border-4 border-current"
+              src={organizer.avatar}
+              alt={organizer.name}
+            />
+            <h3 class="font-bold text-2xl">{organizer.name}</h3>
+            <p class="text-center italic text-sm">{organizer.role}</p>
+            <p class="text-center text-sm">{organizer.bio}</p>
+            <ul class="relative flex items-center justify-center gap-4">
+              <li>
+                <a
+                  class="flex h-8 w-8 items-center justify-center"
+                  href={organizer.github}
+                >
+                  <span class="sr-only">Github</span>
+                  <Icon class="h-full" name="fa-brands:github" />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex h-8 w-8 items-center justify-center"
+                  href={organizer.linkedin}
+                >
+                  <span class="sr-only">Linkedin</span>
+                  <Icon class="h-full" name="fa-brands:linkedin" />
+                </a>
+              </li>
+              <li>
+                <a
+                  class="flex h-8 w-8 items-center justify-center"
+                  href={organizer.twitter}
+                >
+                  <span class="sr-only">Twitter</span>
+                  <Icon class="h-full" name="fa-brands:twitter" />
+                </a>
+              </li>
+            </ul>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </ContentSection>

@@ -4,6 +4,11 @@ import { Image } from "astro:assets";
 import ContentSection from "~/components/content-section.astro";
 import type { PastEventsItem } from "~/types";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const pastEvents: Array<PastEventsItem> = [
   {
     title: "Frontend.OPO Meetup #1",
@@ -59,7 +64,7 @@ const upcomingEvent = {
 <ContentSection id="the-events">
   <div class="w-full max-w-6xl">
     <h2 class="gradient-text mb-6 font-extrabold tracking-tight text-4xl">
-      Upcoming Events
+      {t("events.upcoming")}
     </h2>
     <div
       class="mb-4 flex flex-col items-start gap-2 rounded-lg border border-default bg-offset p-6 text-xs sm:text-sm"
@@ -94,10 +99,12 @@ const upcomingEvent = {
       </ul>
       <div class="flex w-full flex-col justify-between sm:flex-row">
         <p class="underline">
-          <a href={upcomingEvent.link} target="_blank"> More info & RSVP</a>
+          <a href={upcomingEvent.link} target="_blank">
+            {t("events.more-info")}</a
+          >
         </p>
         <div class="flex items-end">
-          <p class="text-offset">Hosted by</p>
+          <p class="text-offset">{t("events.hosted-by")}</p>
           <a href={upcomingEvent.host.link} target="_blank">
             <Image
               width={100}
@@ -115,7 +122,7 @@ const upcomingEvent = {
   <h2
     class="gradient-text mb-6 w-full max-w-6xl font-extrabold tracking-tight text-4xl"
   >
-    Past Events
+    {t("events.past")}
   </h2>
 
   <ul class="!mt-2 grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -130,7 +137,7 @@ const upcomingEvent = {
             target="_blank"
           >
             <Icon pack="mdi" name="open-in-new" class="h-4" />
-            Check the VOD
+            {t("events.check-vod")}
           </a>
         </li>
       ))

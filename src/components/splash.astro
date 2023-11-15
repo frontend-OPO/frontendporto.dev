@@ -4,6 +4,11 @@ import { Image } from "astro:assets";
 import codeImage from "~/assets/code.svg";
 import MeetupCorner from "./meetup-corner.astro";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const widths = [250, 400];
 const sizes = "(min-width: 640px) 30vw, 45vw";
 ---
@@ -19,8 +24,7 @@ const sizes = "(min-width: 640px) 30vw, 45vw";
       >
         frontend.OPO
         <span class="font-semibold">
-          <br /> the Porto's hub for
-          <br /> frontend developers
+          <Fragment set:html={t("splash.description")} />
         </span>
       </div>
     </h2>

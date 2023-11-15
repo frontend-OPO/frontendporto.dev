@@ -3,10 +3,19 @@ import Icon from "astro-icon";
 import ThemeSwitcher from "~/components/theme-switcher.astro";
 import type { NavItem } from "~/types";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+console.log(lang);
+console.log(Astro.url);
+const nextLang = lang === "pt" ? "en" : "pt";
+
+const t = useTranslations(lang);
+
 const navItems: Array<NavItem> = [
-  { title: "The Community", url: "#the-community" },
-  { title: "The Events", url: "#the-events" },
-  { title: "The Organizers", url: "#the-organizers" },
+  { title: t("header.community"), url: "#the-community" },
+  { title: t("header.events"), url: "#the-events" },
+  { title: t("header.organizers"), url: "#the-organizers" },
 ];
 ---
 
@@ -31,6 +40,11 @@ const navItems: Array<NavItem> = [
               </li>
             ))
           }
+          <li>
+            <a href={`?lang=${nextLang}`}>
+              <Icon name={`lang/${nextLang}`} class="h-6" />
+            </a>
+          </li>
         </ul>
       </nav>
       <button
@@ -70,6 +84,12 @@ const navItems: Array<NavItem> = [
                   </li>
                 ))
               }
+              <a
+                class="flex items-center justify-center py-4"
+                href={`?lang=${nextLang}`}
+              >
+                <Icon name={`lang/${nextLang}`} class="h-6" />
+              </a>
             </ul>
           </nav>
         </div>

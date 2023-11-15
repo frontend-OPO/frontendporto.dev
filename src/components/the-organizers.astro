@@ -3,6 +3,11 @@ import { Icon } from "astro-icon";
 import { Image } from "astro:assets";
 import ContentSection from "~/components/content-section.astro";
 
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const organizers = [
   {
     name: "Luis von Rondow",
@@ -38,10 +43,9 @@ const organizers = [
 ];
 ---
 
-<ContentSection title="Who we are" id="the-organizers">
+<ContentSection title={t("organizers.title")} id="the-organizers">
   <Fragment slot="lead">
-    The faces behind the meetup. We are a group of developers who are passionate
-    about the web, the community and francesinhas.
+    {t("organizers.main")}
   </Fragment>
   <div class="max-w-6xl space-y-2">
     <ul class="grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

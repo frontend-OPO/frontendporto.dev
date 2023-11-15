@@ -9,7 +9,6 @@ import TheOrganizers from "~/components/the-organizers.astro";
 import "~/styles/index.css";
 
 const { generator, site } = Astro;
-const image = new URL("social.jpg", site);
 const description = "Frontend community in Porto, Portugal";
 ---
 
@@ -28,7 +27,7 @@ const description = "Frontend community in Porto, Portugal";
     <meta property="og:title" content="frontend.OPO" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <!-- <meta property="og:image" content={image} /> -->
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
 

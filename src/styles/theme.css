@@ -1,19 +1,19 @@
 [data-theme="light"] {
-  --color-primary: theme("colors.pink.500");
-  --color-secondary: theme("colors.indigo.500");
-  --color-text: theme("colors.gray.900");
-  --color-text-offset: theme("colors.gray.600");
+  --color-primary: #FF7F04;
+  --color-secondary: #FFB76B;
+  --color-text: #0D1117;
+  --color-text-offset: #161B22;
   --color-background: theme("colors.gray.50");
   --color-background-offset: theme("colors.gray.100");
-  --color-border: theme("colors.gray.900" / 10%);
+  --color-border: #0D1117;
 }
 
 [data-theme="dark"] {
-  --color-primary: theme("colors.pink.400");
+  --color-primary: #fbefbe;
   --color-secondary: theme("colors.indigo.400");
   --color-text: theme("colors.gray.50");
   --color-text-offset: theme("colors.gray.400");
-  --color-background: theme("colors.gray.900");
-  --color-background-offset: theme("colors.gray.800");
+  --color-background: #0D1117;
+  --color-background-offset: #161B22;
   --color-border: theme("colors.gray.50" / 10%);
 }

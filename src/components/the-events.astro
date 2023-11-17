@@ -1,64 +1,21 @@
 ---
 import Icon from "astro-icon";
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
 import ContentSection from "~/components/content-section.astro";
-import type { PastEventsItem } from "~/types";
 
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const pastEvents: Array<PastEventsItem> = [
-  {
-    title: "Frontend.OPO Meetup #1",
-    description:
-      "In this first meetup we had a talk about the new React 18 release given by Luis von Rondow and a talk about the new Next.js 12 release given by Fabio Zuin. It was hosted by Sword Health.",
-    link: "http://google.com",
-  },
-  {
-    title: "Frontend.OPO Meetup #1",
-    description:
-      "In this first meetup we had a talk about the new React 18 release given by Luis von Rondow and a talk about the new Next.js 12 release given by Fabio Zuin. It was hosted by Sword Health.",
-    link: "http://google.com",
-  },
-  {
-    title: "Frontend.OPO Meetup #1",
-    description:
-      "In this first meetup we had a talk about the new React 18 release given by Luis von Rondow and a talk about the new Next.js 12 release given by Fabio Zuin. It was hosted by Sword Health.",
-    link: "http://google.com",
-  },
-];
+const events = await getCollection("event");
 
-const upcomingEvent = {
-  title: "Frontend.OPO Meetup #1",
-  link: "https://www.meetup.com/frontend-opo/events/281805237/",
-  date: "December 6, 2023 - 18:30 to 21:30",
-  location: "Sword Health - Porto Office",
-  address: {
-    link: "https://maps.app.goo.gl/WjTe88Ubsdwi1vSaA",
-    label: "Avenida Sidónio Pais 153, Edifício A, Piso 5, 4100-467 Porto",
-  },
-  speakers: [
-    {
-      name: "Luis von Rondow",
-      role: "Frontend Engineer",
-      company: "Sword Health",
-      social: "https://linkedin.com/in/luisrondow",
-    },
-    {
-      name: "Fabio Zuin",
-      role: "Frontend Engineer",
-      company: "Devexperts",
-      social: "https://linkedin.com/in/fabio-zuin-85116089",
-    },
-  ],
-  host: {
-    name: "Sword Health",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Sword-logo-blue.svg/1200px-Sword-logo-blue.svg.png",
-    link: "https://swordhealth.com/",
-  },
-};
+const upcomingEvent = events.find((event) => event.data.upcoming)?.data;
+const pastEvents = events.filter(
+  (event) => !event.data.upcoming && event.data.vod,
+);
 ---
 
 <ContentSection id="the-events">
@@ -66,81 +23,86 @@ const upcomingEvent = {
     <h2 class="gradient-text mb-6 font-extrabold tracking-tight text-4xl">
       {t("events.upcoming")}
     </h2>
-    <div
-      class="mb-4 flex flex-col items-start gap-2 rounded-lg border border-default bg-offset p-6 text-xs sm:text-sm"
-    >
-      <p class="hidden font-bold text-primary sm:block">
-        {upcomingEvent.date}
-      </p>
-      <p class="font-bold text-primary sm:hidden">
-        {upcomingEvent.date}
-      </p>
-      <h3 class="font-bold text-lg sm:text-xl">{upcomingEvent.title}</h3>
-      <p class="font-semibold">
-        {upcomingEvent.location} |
-        <a href={upcomingEvent.address.link} class="font-medium text-offset">
-          {upcomingEvent.address.label}
-        </a>
-      </p>
-      <ul class="my-2">
-        <p class="font-bold">Speakers:</p>
-        {
-          upcomingEvent.speakers.map(({ name, role, company, social }) => (
-            <li class="flex gap-1">
-              <>
-                <a href={social}>{name}</a>
-                <span class="hidden sm:block">
-                  :: {role} at {company}
-                </span>
-              </>
-            </li>
-          ))
-        }
-      </ul>
-      <div class="flex w-full flex-col justify-between sm:flex-row">
-        <p class="underline">
-          <a href={upcomingEvent.link} target="_blank">
-            {t("events.more-info")}</a
-          >
-        </p>
-        <div class="flex items-end">
-          <p class="text-offset">{t("events.hosted-by")}</p>
-          <a href={upcomingEvent.host.link} target="_blank">
-            <Image
-              width={100}
-              height={100}
-              src={upcomingEvent.host.logo}
-              loading="eager"
-              alt={`${upcomingEvent.host.name} logo`}
-            />
-          </a>
+    {
+      !!upcomingEvent ? (
+        <div class="mb-4 flex flex-col items-start gap-2 rounded-lg border border-default bg-offset p-6 text-xs sm:text-sm">
+          <p class="hidden font-bold text-primary sm:block">
+            {upcomingEvent.date}
+          </p>
+          <p class="font-bold text-primary sm:hidden">{upcomingEvent.date}</p>
+          <h3 class="font-bold text-lg sm:text-xl">{upcomingEvent.title}</h3>
+          <p class="font-semibold">
+            {upcomingEvent.location} |
+            <a
+              href={upcomingEvent.address.link}
+              class="font-medium text-offset"
+            >
+              {upcomingEvent.address.label}
+            </a>
+          </p>
+          <ul class="my-2">
+            <p class="font-bold">Speakers:</p>
+            {upcomingEvent.speakers.map(({ name, role, company, social }) => (
+              <li class="flex gap-1">
+                <>
+                  <a href={social}>{name}</a>
+                  <span class="hidden sm:block">
+                    :: {role} at {company}
+                  </span>
+                </>
+              </li>
+            ))}
+          </ul>
+          <div class="flex w-full flex-col justify-between sm:flex-row">
+            <p class="underline">
+              <a href={upcomingEvent.link} target="_blank">
+                {t("events.more-info")}
+              </a>
+            </p>
+            <div class="flex items-end">
+              <p class="text-offset">{t("events.hosted-by")}</p>
+              <a href={upcomingEvent.host.link} target="_blank">
+                <Image
+                  width={100}
+                  height={100}
+                  src={upcomingEvent.host.logo}
+                  loading="eager"
+                  alt={`${upcomingEvent.host.name} logo`}
+                />
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      ) : (
+        <h2>{t("events.comming-soon")}</h2>
+      )
+    }
   </div>
 
-  <h2
-    class="gradient-text mb-6 w-full max-w-6xl font-extrabold tracking-tight text-4xl"
-  >
-    {t("events.past")}
-  </h2>
+  {
+    pastEvents.length > 0 ? (
+      <Fragment>
+        <h2 class="gradient-text mb-6 w-full max-w-6xl font-extrabold tracking-tight text-4xl">
+          {t("events.past")}
+        </h2>
 
-  <ul class="!mt-2 grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-    {
-      pastEvents.map(({ title, description, link }) => (
-        <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <p class="text-center font-extrabold text-lg">{title}</p>
-          <p class="text-center text-offset text-sm">{description}</p>
-          <a
-            class="flex items-center gap-1 underline text-sm"
-            href={link}
-            target="_blank"
-          >
-            <Icon pack="mdi" name="open-in-new" class="h-4" />
-            {t("events.check-vod")}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+        <ul class="!mt-2 grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {pastEvents.map(({ data: { title, description, link } }) => (
+            <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+              <p class="text-center font-extrabold text-lg">{title}</p>
+              <p class="text-center text-offset text-sm">{description}</p>
+              <a
+                class="flex items-center gap-1 underline text-sm"
+                href={link}
+                target="_blank"
+              >
+                <Icon pack="mdi" name="open-in-new" class="h-4" />
+                {t("events.check-vod")}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Fragment>
+    ) : null
+  }
 </ContentSection>

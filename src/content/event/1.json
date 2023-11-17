@@ -1,0 +1,32 @@
+{
+  "upcoming": false,
+  "title": "Frontend.OPO Meetup #1",
+  "description": "The first Frontend.OPO meetup.",
+  "link": "https://www.meetup.com/frontend-opo/",
+  "date": "December 6, 2023 - 18:00 to 21:00",
+  "location": "Sword Health - Porto Office",
+  "address": {
+    "link": "https://maps.app.goo.gl/WjTe88Ubsdwi1vSaA",
+    "label": "Avenida Sidónio Pais 153, Edifício A, Piso 5, 4100-467 Porto"
+  },
+  "speakers": [
+    {
+      "name": "Luis von Rondow",
+      "role": "Frontend Engineer",
+      "company": "Sword Health",
+      "social": "https://linkedin.com/in/luisrondow"
+    },
+    {
+      "name": "Fabio Zuin",
+      "role": "Frontend Engineer",
+      "company": "Devexperts",
+      "social": "https://linkedin.com/in/fabio-zuin-85116089"
+    }
+  ],
+  "host": {
+    "name": "Sword Health",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Sword-logo-blue.svg/1200px-Sword-logo-blue.svg.png",
+    "link": "https://swordhealth.com/"
+  },
+  "vod": ""
+}

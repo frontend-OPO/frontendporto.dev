@@ -22,8 +22,7 @@ const organizers = [
   {
     name: "Fabio Zuin",
     role: "Senior Frontend Engineer at Devexperts",
-    bio: "Lorem Impsum Dolor Sit Amet Consectetur Adipiscing Elit. Donec Eget Diam Sit Amet Nunc.",
-    twitter: "https://twitter.com/elonmusk",
+    bio: "const Fabio = [“Speaker”, “Sharer”, “Passionate about technology”, “Code for fun”];",
     github: "https://github.com/fbzz",
     linkedin: "https://www.linkedin.com/in/fabio-zuin-85116089/",
     avatar:
@@ -33,8 +32,7 @@ const organizers = [
     name: "João Mateus",
     role: "Frontend Engineer at Devoteam",
     bio: "Lorem Impsum Dolor Sit Amet Consectetur Adipiscing Elit. Donec Eget Diam Sit Amet Nunc.",
-    twitter: "https://twitter.com/elonmusk",
-    github: "https://github.com/elonmusk",
+    twitter: "https://twitter.com/joaomateus_92",
     linkedin:
       "https://www.linkedin.com/in/jo%C3%A3o-lu%C3%ADs-mateus-384568101/",
     avatar:
@@ -63,7 +61,7 @@ const organizers = [
             <p class="text-center italic text-sm">{organizer.role}</p>
             <p class="text-center text-sm">{organizer.bio}</p>
             <ul class="relative flex items-center justify-center gap-4">
-              <li>
+              <li class={`${!organizer.github && "hidden"}`}>
                 <a
                   class="flex h-8 w-8 items-center justify-center"
                   href={organizer.github}
@@ -72,7 +70,7 @@ const organizers = [
                   <Icon class="h-full" name="fa-brands:github" />
                 </a>
               </li>
-              <li>
+              <li class={`${!organizer.linkedin && "hidden"}`}>
                 <a
                   class="flex h-8 w-8 items-center justify-center"
                   href={organizer.linkedin}
@@ -81,7 +79,7 @@ const organizers = [
                   <Icon class="h-full" name="fa-brands:linkedin" />
                 </a>
               </li>
-              <li>
+              <li class={`${!organizer.twitter && "hidden"}`}>
                 <a
                   class="flex h-8 w-8 items-center justify-center"
                   href={organizer.twitter}

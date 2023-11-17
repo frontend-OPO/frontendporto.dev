@@ -22,6 +22,7 @@ export const ui = {
     "events.hosted-by": "Hosted by",
     "events.past": "Past Events",
     "events.check-vod": "Check the VOD",
+    "events.comming-soon": "Comming Soon...",
     "organizers.title": "Who we are",
     "organizers.main":
       "The faces behind the meetup. We are a group of developers who are passionate about the web, the community and francesinhas.",
@@ -42,6 +43,7 @@ export const ui = {
     "events.hosted-by": "Acolhidos por",
     "events.past": "Encontros Passados",
     "events.check-vod": "Veja o VOD",
+    "events.comming-soon": "Em Breve...",
     "organizers.title": "Quem somos nós",
     "organizers.main":
       "As caras por detrás do meetup. Somos um grupo de developers apaixonados pela web, pelas comunidades e por francesinhas.",

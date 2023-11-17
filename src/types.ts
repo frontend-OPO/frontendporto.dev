@@ -1,15 +1,3 @@
-export interface CompatibilityItem {
-  icon: string;
-  title: string;
-  url: string;
-}
-
-export interface PastEventsItem {
-  description: string;
-  title: string;
-  link: string;
-}
-
 export interface FooterLink {
   description: string;
   icon: string;

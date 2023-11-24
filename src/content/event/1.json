@@ -1,9 +1,9 @@
 {
-  "upcoming": false,
-  "title": "Frontend.OPO Meetup #1",
+  "upcoming": true,
+  "title": "Qwik.js And HTMX: The future of Web Develoment - Frontend.OPO Meetup #1",
   "description": "The first Frontend.OPO meetup.",
-  "link": "https://www.meetup.com/frontend-opo/",
-  "date": "December 6, 2023 - 18:00 to 21:00",
+  "link": "https://www.meetup.com/frontend-opo/events/297049091/",
+  "date": "December 6, 2023 - 18:30 to 21:30",
   "location": "Sword Health - Porto Office",
   "address": {
     "link": "https://maps.app.goo.gl/WjTe88Ubsdwi1vSaA",
@@ -18,7 +18,7 @@
     },
     {
       "name": "Fabio Zuin",
-      "role": "Frontend Engineer",
+      "role": "Senior Frontend Engineer",
       "company": "Devexperts",
       "social": "https://linkedin.com/in/fabio-zuin-85116089"
     }

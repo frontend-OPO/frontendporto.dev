@@ -6,8 +6,6 @@ import type { NavItem } from "~/types";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-console.log(lang);
-console.log(Astro.url);
 const nextLang = lang === "pt" ? "en" : "pt";
 
 const t = useTranslations(lang);

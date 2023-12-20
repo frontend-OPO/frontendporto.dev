@@ -22,6 +22,7 @@ export const ui = {
     "events.hosted-by": "Hosted by",
     "events.past": "Past Events",
     "events.check-vod": "Check the VOD",
+    "events.check-more-info": "More info",
     "events.comming-soon": "Comming Soon...",
     "organizers.title": "Who we are",
     "organizers.main":
@@ -40,6 +41,7 @@ export const ui = {
     "community.follow": "Siga-nos",
     "events.upcoming": "Próximos Encontros",
     "events.more-info": "Mais infos & RSVP",
+    "events.check-more-info": "Mais infos",
     "events.hosted-by": "Acolhidos por",
     "events.past": "Encontros Passados",
     "events.check-vod": "Veja o VOD",

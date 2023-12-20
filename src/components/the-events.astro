@@ -14,7 +14,7 @@ const events = await getCollection("event");
 
 const upcomingEvent = events.find((event) => event.data.upcoming)?.data;
 const pastEvents = events.filter(
-  (event) => !event.data.upcoming && event.data.vod,
+  (event) => !event.data.upcoming,
 );
 ---
 
@@ -87,17 +87,18 @@ const pastEvents = events.filter(
         </h2>
 
         <ul class="!mt-2 grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {pastEvents.map(({ data: { title, description, link } }) => (
+          {pastEvents.map(({ data: { title, description, link, vod } }) => (
             <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
               <p class="text-center font-extrabold text-lg">{title}</p>
               <p class="text-center text-offset text-sm">{description}</p>
+              {  }
               <a
                 class="flex items-center gap-1 underline text-sm"
-                href={link}
+                href={vod || link}
                 target="_blank"
               >
                 <Icon pack="mdi" name="open-in-new" class="h-4" />
-                {t("events.check-vod")}
+                {t(vod ? "events.check-vod" : "events.check-more-info")}
               </a>
             </li>
           ))}

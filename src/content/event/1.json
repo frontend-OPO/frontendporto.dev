@@ -1,7 +1,7 @@
 {
-  "upcoming": true,
+  "upcoming": false,
   "title": "Qwik.js And HTMX: The future of Web Develoment - Frontend.OPO Meetup #1",
-  "description": "The first Frontend.OPO meetup.",
+  "description": "The first Frontend.OPO meetup, hosted at Sword Health, features talks on innovative web development frameworks Qwik and HTMX, by Fabio Zuin and Luis von Rondow.",
   "link": "https://www.meetup.com/frontend-opo/events/297049091/",
   "date": "December 6, 2023 - 18:30 to 21:30",
   "location": "Sword Health - Porto Office",

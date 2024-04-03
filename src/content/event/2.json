@@ -1,0 +1,32 @@
+{
+  "upcoming": false,
+  "title": "Web Performance with Astro.build & Creepy JS+HTML Puzzles - Frontend.OPO #2",
+  "description": "The second Frontend.OPO meetup, hosted at Devexperts Portugal, with a talk about Web Performance with Astro.build and a Creepy JS+HTML Puzzles workshop.",
+  "link": "https://www.youtube.com/live/jgz3MGMA3kA?si=2WfAeyF_x6CowvNn",
+  "date": "December 6, 2023 - 19:30 to 22:00",
+  "location": "Devexperts Portugal",
+  "address": {
+    "link": "https://maps.app.goo.gl/WjTe88Ubsdwi1vSaA",
+    "label": "Edifício Península, Praça do Bom Sucesso 127-131, 4150-146 Porto"
+  },
+  "speakers": [
+    {
+      "name": "Bruno Macabeus",
+      "role": "Sr. Full-Stack Engineer",
+      "company": "Anima",
+      "social": "https://www.linkedin.com/in/macabeus/"
+    },
+    {
+      "name": "Rafael Pradella",
+      "role": "Front-End Developer",
+      "company": "Devexperts",
+      "social": "https://www.linkedin.com/in/rafaelpradella/"
+    }
+  ],
+  "host": {
+    "name": "Devexperts Portual",
+    "logo": "https://devexperts.com/app/uploads/brand-guide/dx_primary_logo_horizontal.svg",
+    "link": "https://devexperts.com/"
+  },
+  "vod": ""
+}

@@ -1,0 +1,19 @@
+{
+  "upcoming": true,
+  "title": "TBA - Frontend.OPO Meetup #4",
+  "description": "Soon...",
+  "link": "https://www.meetup.com/frontend-opo/",
+  "date": "June 19, 2023 - 19:00 to 22:00",
+  "location": "Mindera",
+  "address": {
+    "link": "https://maps.app.goo.gl/HWCYUMcVw3Bv6YCs8",
+    "label": "R. de Gonçalo Cristóvão 347 s404, 4000-270 Porto"
+  },
+  "speakers": [],
+  "host": {
+    "name": "Mindera",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mindera_Logo_Black_%281%29.svg/2560px-Mindera_Logo_Black_%281%29.svg.png",
+    "link": "https://mindera.com/"
+  },
+  "vod": ""
+}

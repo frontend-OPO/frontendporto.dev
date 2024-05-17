@@ -1,0 +1,32 @@
+{
+  "upcoming": false,
+  "title": "Solid.js & Monorepo - Frontend.OPO Meetup #3",
+  "description": "In the third Frontend.OPO Meetup we had two talks, one about Solid.js and another about the usecases of Monorepo. The event was hosted by ISS Tech Portugal.",
+  "link": "https://www.meetup.com/frontend-opo/events/300305983/",
+  "date": "May 2, 2024 - 19:30 to 22:00",
+  "location": "ISS Tech Portugal",
+  "address": {
+    "link": "https://maps.app.goo.gl/5ck22LhDn3Nk2CcN6",
+    "label": "R. de Santa Catarina 1232, 4000-457 Porto"
+  },
+  "speakers": [
+    {
+      "name": "Guilherme de Andrade",
+      "role": "Senior Frontend Engineer",
+      "company": "ISS",
+      "social": "https://www.linkedin.com/in/ubmit/"
+    },
+    {
+      "name": "Tiago Alves",
+      "role": "Engineering Manager",
+      "company": "ISS",
+      "social": "https://www.linkedin.com/in/tiagof/"
+    }
+  ],
+  "host": {
+    "name": "ISS Tech Portugal",
+    "logo": "https://upload.wikimedia.org/wikipedia/commons/c/cc/ISS_Facility_Services_Holding_GmbH_Logo.png",
+    "link": "https://www.issworld.com/en"
+  },
+  "vod": "https://www.youtube.com/watch?v=-MIZwbbL_Do&t=2815s&ab_channel=frontendPorto"
+}

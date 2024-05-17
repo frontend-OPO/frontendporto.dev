@@ -15,7 +15,7 @@ const events = await getCollection("event");
 const upcomingEvent = events.find((event) => event.data.upcoming)?.data;
 const pastEvents = events.filter(
   (event) => !event.data.upcoming,
-);
+).reverse();
 ---
 
 <ContentSection id="the-events">
@@ -40,26 +40,30 @@ const pastEvents = events.filter(
               {upcomingEvent.address.label}
             </a>
           </p>
-          <ul class="my-2">
-            <p class="font-bold">Speakers:</p>
-            {upcomingEvent.speakers.map(({ name, role, company, social }) => (
-              <li class="flex gap-1">
-                <>
-                  <a href={social}>{name}</a>
-                  <span class="hidden sm:block">
-                    :: {role} at {company}
-                  </span>
-                </>
-              </li>
-            ))}
-          </ul>
+          {
+            upcomingEvent.speakers.length ? (
+            <ul class="my-2">
+              <p class="font-bold">Speakers:</p>
+              {upcomingEvent.speakers.map(({ name, role, company, social }) => (
+                <li class="flex gap-1">
+                  <>
+                    <a href={social}>{name}</a>
+                    <span class="hidden sm:block">
+                      :: {role} at {company}
+                    </span>
+                  </>
+                </li>
+              ))}
+            </ul>
+            ) : null
+          }
           <div class="flex w-full flex-col justify-between sm:flex-row">
             <p class="underline">
               <a href={upcomingEvent.link} target="_blank">
                 {t("events.more-info")}
               </a>
             </p>
-            <div class="flex items-end">
+            <div class="flex items-center gap-2">
               <p class="text-offset">{t("events.hosted-by")}</p>
               <a href={upcomingEvent.host.link} target="_blank">
                 <Image

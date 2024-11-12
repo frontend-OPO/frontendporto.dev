@@ -1,19 +1,32 @@
 {
-  "upcoming": true,
-  "title": "TBA - Frontend.OPO Meetup #4",
-  "description": "Soon...",
-  "link": "https://www.meetup.com/frontend-opo/",
-  "date": "June 19, 2023 - 19:00 to 22:00",
+  "upcoming": false,
+  "title": "Web3 & React Spring - Frontend.OPO Meetup #4",
+  "description": "The third Frontend Meetup of 2024 at Mindera in Porto brought web developers together for networking and insights into Web3 by Carlos Pires and React Spring animations by Cainã.",
+  "link": "https://www.meetup.com/frontend-opo/events/301033833",
+  "date": "June 19, 2024 - 19:00 to 22:00",
   "location": "Mindera",
   "address": {
     "link": "https://maps.app.goo.gl/HWCYUMcVw3Bv6YCs8",
     "label": "R. de Gonçalo Cristóvão 347 s404, 4000-270 Porto"
   },
-  "speakers": [],
+  "speakers": [
+    {
+      "name": "Carlos Pires",
+      "role": "Web Developer",
+      "company": "",
+      "social": "https://www.instagram.com/cadu/"
+    },
+    {
+      "name": "Cainã",
+      "role": "Tech Lead",
+      "company": "Mindera",
+      "social": "https://www.linkedin.com/in/guaiamum/"
+    }
+  ],
   "host": {
     "name": "Mindera",
     "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mindera_Logo_Black_%281%29.svg/2560px-Mindera_Logo_Black_%281%29.svg.png",
     "link": "https://mindera.com/"
   },
-  "vod": ""
+  "vod": "https://www.youtube.com/watch?v=lmN6SK9cwg4&ab_channel=FrontendPorto"
 }

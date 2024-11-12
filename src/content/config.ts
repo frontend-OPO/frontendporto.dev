@@ -18,7 +18,7 @@ const event = defineCollection({
         z.object({
           name: z.string().min(1),
           role: z.string().min(1),
-          company: z.string().min(1),
+          company: z.string(),
           social: z.string().min(1),
         }),
       ),
